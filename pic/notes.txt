@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>Community Page</title>
+        <script src="comm.js"></script>
+        <link rel="stylesheet" href="comstyle.css">
+    </head>
+    <body>
+        <!-- Other elements of the page go here -->
+        
+        <!-- Container to hold the `post` divs -->
+        <div id="post-container">
+            <!-- Loop to generate the `post` divs -->
+            for (let i = 0; i < 3; i++) {
+                let postDiv = document.createElement("div");
+                postDiv.classList.add("post");
+                postDiv.innerHTML = `
+                    <!-- HTML code for the `post` div goes here -->
+                `;
+                document.getElementById("post-container").appendChild(postDiv);
+            }
+        </div>
+    </body>
+</html>
+
+
+Note that the post divs will be generated dynamically using JavaScript, so you need to make sure that the JavaScript code runs after the page has finished loading. You can do this by placing the JavaScript code in a function and calling it in the window.onload event.
