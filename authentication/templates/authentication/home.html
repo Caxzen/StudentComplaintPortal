@@ -1,0 +1,71 @@
+{% load static %}
+<html>
+    <head>
+        <title>Community Page</title>
+        <script src="comm.js"></script>
+        <link rel="stylesheet" href="{% static 'C:\Users\ajay\Desktop\gc\authentication\static\templates\comstyle.css' %}">
+    </head>
+    </html>
+    <header>
+        <div class="logo"><p">LOGO HERE PROBABLY</p></div>
+        <!--
+        <div class="search-box">
+            <a href="#"><img src="magnifying-glass.png" alt="Search icon" id="magglass"></a>
+            <input type="search" id="search" placeholder="Search">
+        </div>
+    -->
+        <nav>
+            <a href="/post"><img src="{% static 'C:\Users\ajay\Desktop\gc\authentication\static\templates\write.png' %}" alt="Write icon" id = "write"></a>
+        </nav>
+    </header>
+    <body>
+        <script type="text/javascript">
+            function toggle(){
+                var blur = document.getElementById('blur');
+                blur.classList.toggle('active')
+                var popup = document.getElementById('pop-up');
+                popup.classList.toggle('active')
+            }
+        </script>
+        <div class="Main" id="blur">
+           <div class="left-side">
+            
+                {% block body %}
+                
+                    {% for post in posts %} 
+                <div class="post">
+                               
+                        <div class="post-header">
+                            <div class="profile">
+                                <img height=50px src="{% static 'C:\Users\ajay\Desktop\gc\authentication\static\templates\profile.png' %}" alt="profile" class="cover">
+                            </div>
+                            <h3>{{ post.name }}</h3>                        
+                        
+                        <a onclick="toggle()">
+                            <img src="{% static 'C:\Users\ajay\Desktop\gc\authentication\static\templates\view.png' %}" alt="view" class="polli">
+                        </a>
+                        </div>
+                    <div class="content">
+                        <h1>{{ post.title }}</h1>
+                        <p>{{ post.content }}</p>
+                    </div>
+
+                    {% endfor %}
+
+
+                </div>
+                {% endblock %}
+            </div>
+             
+        </div>
+    </div>
+    </div>
+        <div id="pop-up">
+            <p>He stared out the window at the snowy field. He'd been stuck in the house for close to a month and his only view of the outside world was through the window. There wasn't much to see. It was mostly just the field with an occasional bird or small animal who ventured into the field. As he continued to stare out the window, he wondered how much longer he'd be shackled to the steel bar inside the house.
+                The kids were loud. They were way too loud for Jerry, especially since this was a four-hour flight. The parents didn't seem to be able, or simply didn't want, to control them. They were yelling and fighting among themselves and it was impossible for any of the passengers to concentrate or rest. He thought about politely tapping on the parents' shoulders and asking them to try and get their kids under a bit more control, but before he did he came up with a better idea. Sure, it was a bit sinister, and he'd probably end p in a lot of trouble, but he really didn't care at that point.
+                It was difficult for him to admit he was wrong. He had been so certain that he was correct and the deeply held belief could never be shaken. Yet the proof that he had been incorrect stood right before his eyes. "See daddy, I told you that they are real!" his daughter excitedly proclaimed.
+                He was aware there were numerous wondereen dreading this moment for a good six months, and it had finally arrived despite her best efforts to forestall it. No matter how hard she tried, she couldn't keep the inevitable from happening. So the time had come for a normal person to say goodbye and move on. It was at this moment that Nancy decided not to be a normal person. After all the time and effort she had expended, she couldn't bring herself to do it.</p>
+                <a href="#" onclick="toggle()">CLOSE</a>
+            </div>
+    </body>
+</html>
